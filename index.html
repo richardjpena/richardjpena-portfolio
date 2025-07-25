@@ -833,7 +833,7 @@
                 <p style="text-align: center; margin-bottom: 40px; font-size: 1.1em; color: #666;">
                     Ready to transform your product organization and achieve breakthrough market outcomes? Let's discuss how we can create the next chapter of exponential growth.
                 </p>
-                <form class="contact-form">
+                <form class="contact-form" action="mailto:richardjpena@gmail.com" method="post" enctype="text/plain">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
@@ -911,10 +911,6 @@
         });
 
         // Form submission
-        document.querySelector('.contact-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for reaching out! I\'ll get back to you soon to discuss how we can create breakthrough results together.');
-        });
 
         // Add interactive hover effects
         document.querySelectorAll('.portfolio-item').forEach(item => {
