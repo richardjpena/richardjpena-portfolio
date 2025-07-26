@@ -4,40 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Richard Peña - Elite Product Leader</title>
-    /* Experience Matcher Styles */
-.matcher-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.job-input-section {
-    background: #f8faff;
-    padding: 40px;
-    border-radius: 20px;
-    margin-bottom: 40px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.job-input-section label {
-    display: block;
-    font-size: 1.2em;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-#job-description {
-    width: 100%;
-    padding: 20px;
-    border: 2px solid #e0e7ff;
-    border-radius: 15px;
-    font-size: 1em;
-    line-height: 1.6;
-    resize: vertical;
-    min-height: 200px;
-    font-family: inherit;
-    transition: border-color 0.3s ease;
-}
 
 #job-description:focus {
     outline: none;
@@ -682,30 +648,6 @@
             <a href="#portfolio" class="cta-button">View My Impact</a>
         </div>
     </section>
-<section id="experience-matcher" class="section">
-            <div class="container">
-                <h2 class="section-title">AI-Powered Experience Matcher</h2>
-                <p style="text-align: center; margin-bottom: 40px; font-size: 1.1em; color: #666;">
-                    Paste any job description below to see how my experience specifically aligns with your role requirements
-                </p>
-                
-                <div class="matcher-container">
-                    <div class="job-input-section">
-                        <label for="job-description">Job Description:</label>
-                        <textarea id="job-description" placeholder="Paste the job description here..." rows="8"></textarea>
-                        <button id="analyze-btn" class="analyze-button">
-                            <span class="btn-text">Analyze Role Fit</span>
-                            <span class="loading-spinner" style="display: none;">Analyzing...</span>
-                        </button>
-                    </div>
-                    
-                    <div id="results-section" class="results-section" style="display: none;">
-                        <h3>Experience Match Analysis</h3>
-                        <div id="match-results"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
     <div class="main-content">
         <section id="about" class="section">
             <div class="container">
@@ -1186,25 +1128,6 @@
         
         window.addEventListener('scroll', revealExperience);
         revealExperience(); // Initial check
-        // Experience Matcher Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const analyzeBtn = document.getElementById('analyze-btn');
-    const jobDescription = document.getElementById('job-description');
-    const resultsSection = document.getElementById('results-section');
-    const matchResults = document.getElementById('match-results');
-    const btnText = document.querySelector('.btn-text');
-    const loadingSpinner = document.querySelector('.loading-spinner');
-
-    // Your Gemini API Key (we'll add this securely)
-    const GEMINI_API_KEY = 'AIzaSyA5R2qTTZc64EBwZ4q3SPUnRN0dHzBaE9A'; // Replace with your actual key
-
-    analyzeBtn.addEventListener('click', async function() {
-        const jobText = jobDescription.value.trim();
-        
-        if (!jobText) {
-            alert('Please paste a job description to analyze.');
-            return;
-        }
 
         // Show loading state
         analyzeBtn.disabled = true;
