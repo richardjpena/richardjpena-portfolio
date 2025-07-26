@@ -1186,6 +1186,133 @@
         
         window.addEventListener('scroll', revealExperience);
         revealExperience(); // Initial check
+        // Experience Matcher Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const analyzeBtn = document.getElementById('analyze-btn');
+    const jobDescription = document.getElementById('job-description');
+    const resultsSection = document.getElementById('results-section');
+    const matchResults = document.getElementById('match-results');
+    const btnText = document.querySelector('.btn-text');
+    const loadingSpinner = document.querySelector('.loading-spinner');
+
+    // Your Gemini API Key (we'll add this securely)
+    const GEMINI_API_KEY = 'YOUR_API_KEY_HERE'; // Replace with your actual key
+
+    analyzeBtn.addEventListener('click', async function() {
+        const jobText = jobDescription.value.trim();
+        
+        if (!jobText) {
+            alert('Please paste a job description to analyze.');
+            return;
+        }
+
+        // Show loading state
+        analyzeBtn.disabled = true;
+        btnText.style.display = 'none';
+        loadingSpinner.style.display = 'inline-block';
+        resultsSection.style.display = 'none';
+
+        try {
+            const analysis = await analyzeJobMatch(jobText);
+            displayResults(analysis);
+            resultsSection.style.display = 'block';
+        } catch (error) {
+            console.error('Analysis error:', error);
+            alert('Analysis temporarily unavailable. Please try again later.');
+        } finally {
+            // Reset button state
+            analyzeBtn.disabled = false;
+            btnText.style.display = 'inline-block';
+            loadingSpinner.style.display = 'none';
+        }
+    });
+
+    async function analyzeJobMatch(jobDescription) {
+        const prompt = `You are an expert career consultant analyzing how Richard Peña's background fits a specific role. 
+
+RICHARD'S BACKGROUND:
+- Senior Product Manager at Amazon (2021-Present): ML-powered forecasting engine (5% YoY revenue increase), platform scalability ($10M cost reduction), cross-functional workflow automation (45% satisfaction boost), secured $4M engineering resources, 58% QoQ adoption increase
+- VP Operations at The Organic Coup (2016-2019): Built management team (50% to 90% success rate), 0-to-1 inventory platform (2% waste reduction), launched e-commerce platform
+- Senior Brand Manager at Ignite Farm (2015-2016): 0-to-1 launch ($0 to $400K in 6 months)
+- Research background: UC Santa Barbara Marine Biotech, protein structures research, scientific methodology
+- Skills: Strategic product leadership, platform architecture, Python, SQL, first-principles thinking, cross-functional leadership
+
+JOB DESCRIPTION TO ANALYZE:
+${jobDescription}
+
+Analyze the fit and provide exactly 4 match items in this JSON format:
+{
+  "matches": [
+    {
+      "score": "95%",
+      "title": "Platform Leadership Experience", 
+      "description": "Specific explanation of how Richard's Amazon platform work directly relates to this role's requirements..."
+    },
+    {
+      "score": "90%",
+      "title": "Cross-Functional Excellence",
+      "description": "How Richard's stakeholder management and team leadership applies..."
+    },
+    {
+      "score": "85%",
+      "title": "Technical Product Skills",
+      "description": "How Richard's Python/SQL and technical background fits..."
+    },
+    {
+      "score": "80%",
+      "title": "Strategic Vision & Execution", 
+      "description": "How Richard's startup and scaling experience applies..."
+    }
+  ]
+}
+
+Focus on specific, relevant connections. Be professional but compelling. Return only valid JSON.`;
+
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${GEMINI_API_KEY}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                contents: [{
+                    parts: [{
+                        text: prompt
+                    }]
+                }],
+                generationConfig: {
+                    temperature: 0.3,
+                    maxOutputTokens: 1024,
+                }
+            })
+        });
+
+        const data = await response.json();
+        const content = data.candidates[0].content.parts[0].text;
+        
+        // Parse JSON response
+        const jsonMatch = content.match(/\{[\s\S]*\}/);
+        if (jsonMatch) {
+            return JSON.parse(jsonMatch[0]);
+        } else {
+            throw new Error('Invalid response format');
+        }
+    }
+
+    function displayResults(analysis) {
+        matchResults.innerHTML = '';
+        
+        analysis.matches.forEach(match => {
+            const matchDiv = document.createElement('div');
+            matchDiv.className = 'match-item';
+            matchDiv.innerHTML = `
+                <div class="match-score">${match.score} Match</div>
+                <div class="match-title">${match.title}</div>
+                <div class="match-description">${match.description}</div>
+            `;
+            matchResults.appendChild(matchDiv);
+        });
+    }
+});
     </script>
 </body>
 </html>
