@@ -354,95 +354,6 @@
             font-weight: 500;
         }
 
-        /* Failure Section */
-        .failure-item {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border: 1px solid #f0f0f0;
-        }
-
-        .failure-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(255, 149, 0, 0.15);
-        }
-
-        .failure-image {
-            height: 180px;
-            background: linear-gradient(45deg, #ff9500, #ff6b35);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.6em;
-            font-weight: 600;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .failure-content {
-            padding: 30px;
-        }
-
-        .failure-title {
-            font-size: 1.3em;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: #333;
-        }
-
-        .failure-description {
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        .failure-outcome, .failure-learning {
-            margin-bottom: 20px;
-            padding: 15px;
-            border-radius: 10px;
-        }
-
-        .failure-outcome {
-            background: #fff5f5;
-            border-left: 4px solid #ff6b35;
-        }
-
-        .failure-learning {
-            background: #f0fdf4;
-            border-left: 4px solid #10b981;
-        }
-
-        .outcome-label, .learning-label {
-            font-weight: 600;
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
-        }
-
-        .outcome-label {
-            color: #dc2626;
-        }
-
-        .learning-label {
-            color: #059669;
-        }
-
-        .failure-outcome p, .failure-learning p {
-            margin: 0;
-            font-size: 0.95em;
-            line-height: 1.5;
-        }
-
-        .failure-tag {
-            background: #fff7ed;
-            color: #ea580c;
-            border: 1px solid #fed7aa;
-        }
-
         /* Experience Section */
         .experience-timeline {
             position: relative;
@@ -604,14 +515,6 @@
             .section {
                 padding: 60px 0;
             }
-
-            .experience-timeline {
-                padding-left: 20px;
-            }
-
-            .experience-item::before {
-                left: -27px;
-            }
         }
 
         /* Smooth scrolling */
@@ -677,27 +580,27 @@
                 </div>
 
                 <div class="skills-grid">
-                  <div id="skill-strategy" class="skill-card fade-in">
+                  <div class="skill-card fade-in">
     <div class="skill-icon">🧠</div>
     <h3>Strategic Product Leadership</h3>
     <p>First-principles thinking, jobs-to-be-done frameworks, continuous discovery, and market disruption methodology</p>
 </div>
-                    <div id="skill-storytelling" class="skill-card fade-in">
+                    <div class="skill-card fade-in">
                         <div class="skill-icon">📖</div>
                         <h3>Master Storytelling</h3>
                         <p>Transforming complex technical visions into compelling narratives that unite stakeholders and drive organizational alignment</p>
                     </div>
-                    <div id="skill-architecture" class="skill-card fade-in">
+                    <div class="skill-card fade-in">
                         <div class="skill-icon">🏗️</div>
                         <h3>Platform Architecture</h3>
                         <p>Designing scalable systems and technical solutions that eliminate operational inefficiencies while maintaining highest standards</p>
                     </div>
-                    <div id="skill-execution" class="skill-card fade-in">
+                    <div class="skill-card fade-in">
                         <div class="skill-icon">🤝</div>
                         <h3>Elite Execution</h3>
                         <p>Delivering breakthrough results through rigorous methodology, cross-functional leadership, and relentless focus on business outcomes</p>
                     </div>
-                       <div id="skill-python" class="skill-card fade-in">
+                       <div class="skill-card fade-in">
        <div class="skill-icon">
     <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
         <path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09-.33.22zM21.1 6.11l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08-.33.23z" fill="#306998"/>
@@ -707,7 +610,7 @@
         <h3>Python & Data Analysis</h3>
         <p>Data modeling, automation scripts, analytics frameworks, and technical product requirements development</p>
     </div>
-    <div id="skill-sql" class="skill-card fade-in">
+    <div class="skill-card fade-in">
         <div class="skill-icon">🗄️</div>
         <h3>SQL & Database Design</h3>
         <p>Complex queries, data architecture, performance optimization, and business intelligence for product decisions</p>
@@ -720,7 +623,7 @@
             <div class="container">
                 <h2 class="section-title">Strategic Impact Stories</h2>
                 <div class="portfolio-grid">
-                    <div id="portfolio-platform" class="portfolio-item fade-in">
+                    <div class="portfolio-item fade-in">
                         <div class="portfolio-image">Platform Transformation</div>
                         <div class="portfolio-content">
                             <h3 class="portfolio-title">Enterprise Platform Architecture</h3>
@@ -750,7 +653,7 @@
                         </div>
                     </div>
 
-                    <div id="portfolio-framework" class="portfolio-item fade-in">
+                    <div class="portfolio-item fade-in">
                         <div class="portfolio-image">Organizational Transformation</div>
                         <div class="portfolio-content">
                             <h3 class="portfolio-title">"Problems Not Prescriptions" Framework</h3>
@@ -780,7 +683,7 @@
                         </div>
                     </div>
 
-                    <div id="portfolio-supply-chain" class="portfolio-item fade-in">
+                    <div class="portfolio-item fade-in">
                         <div class="portfolio-image">Cross-Functional Excellence</div>
                         <div class="portfolio-content">
                             <h3 class="portfolio-title">Global Supply Chain Convergence</h3>
@@ -810,7 +713,7 @@
                         </div>
                     </div>
 
-                    <div id="portfolio-vision" class="portfolio-item fade-in">
+                    <div class="portfolio-item fade-in">
                         <div class="portfolio-image">Strategic Vision Development</div>
                         <div class="portfolio-content">
                             <h3 class="portfolio-title">Advanced Feature Architecture</h3>
@@ -843,117 +746,11 @@
             </div>
         </section>
 
-        <section id="failures" class="section" style="background: #fafbff;">
-            <div class="container">
-                <h2 class="section-title">Learning Through Failure</h2>
-                <p style="text-align: center; margin-bottom: 60px; font-size: 1.1em; color: #666; max-width: 800px; margin-left: auto; margin-right: auto;">
-                    "Success is not final, failure is not fatal: it is the courage to continue that counts." Every failed experiment taught me something valuable that made the next breakthrough possible.
-                </p>
-                <div class="portfolio-grid">
-                    <div id="failure-ai-recommendations" class="failure-item fade-in">
-                        <div class="failure-image">Feature Adoption</div>
-                        <div class="failure-content">
-                            <h3 class="failure-title">AI-Powered Recommendation Engine</h3>
-                            <p class="failure-description">
-                                Launched intelligent recommendation system to personalize user experiences and drive engagement. Expected 25% increase in user retention and 15% boost in key conversion metrics, but initial rollout achieved only 8% adoption rate despite extensive user research and A/B testing.
-                            </p>
-                            <div class="failure-outcome">
-                                <div class="outcome-label">What Went Wrong:</div>
-                                <p>Overengineered the solution with too many personalization variables. Users found recommendations intrusive rather than helpful. Black-box algorithm created distrust when suggestions seemed irrelevant or biased.</p>
-                            </div>
-                            <div class="failure-learning">
-                                <div class="learning-label">Key Learning:</div>
-                                <p>Personalization requires gradual trust-building and user control. Now I prioritize explainable recommendations with clear user controls for customization. Start simple with transparent logic before adding sophistication.</p>
-                            </div>
-                            <div class="tags">
-                                <span class="tag failure-tag">ML/AI Integration</span>
-                                <span class="tag failure-tag">User Experience</span>
-                                <span class="tag failure-tag">Feature Adoption</span>
-                                <span class="tag failure-tag">Personalization</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="failure-analytics-platform" class="failure-item fade-in">
-                        <div class="failure-image">Data Platform</div>
-                        <div class="failure-content">
-                            <h3 class="failure-title">Self-Service Analytics Platform</h3>
-                            <p class="failure-description">
-                                Built comprehensive business intelligence platform to democratize data access across teams. Despite significant engineering investment and stakeholder enthusiasm, achieved only 35% sustained usage after 6 months, with most teams reverting to spreadsheets and manual reports.
-                            </p>
-                            <div class="failure-outcome">
-                                <div class="outcome-label">What Went Wrong:</div>
-                                <p>Focused on technical capabilities rather than user workflows. Complex interface required extensive training. Created a powerful tool that was harder to use than existing solutions for most common use cases.</p>
-                            </div>
-                            <div class="failure-learning">
-                                <div class="learning-label">Key Learning:</div>
-                                <p>Self-service tools must be simpler than the problems they replace. Now I prioritize progressive disclosure and use case-driven design. Analytics tools should feel like natural extensions of existing workflows, not separate platforms.</p>
-                            </div>
-                            <div class="tags">
-                                <span class="tag failure-tag">Business Intelligence</span>
-                                <span class="tag failure-tag">Self-Service Tools</span>
-                                <span class="tag failure-tag">User Adoption</span>
-                                <span class="tag failure-tag">Workflow Integration</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="failure-mobile-redesign" class="failure-item fade-in">
-                        <div class="failure-image">Mobile Experience</div>
-                        <div class="failure-content">
-                            <h3 class="failure-title">Mobile-First Platform Redesign</h3>
-                            <p class="failure-description">
-                                Led comprehensive mobile redesign to improve user engagement and reduce bounce rates. Despite modern UI/UX design and responsive architecture, mobile conversion rates decreased by 12% and user session times dropped significantly during the first quarter post-launch.
-                            </p>
-                            <div class="failure-outcome">
-                                <div class="outcome-label">What Went Wrong:</div>
-                                <p>Prioritized visual design over functional usability. Removed features that power users relied on to create cleaner mobile interface. Mobile-first approach ignored the fact that many users needed desktop functionality.</p>
-                            </div>
-                            <div class="failure-learning">
-                                <div class="learning-label">Key Learning:</div>
-                                <p>Mobile-first doesn't mean mobile-only. Different user segments have different device preferences for different tasks. Now I design adaptive experiences that optimize for context, not just screen size.</p>
-                            </div>
-                            <div class="tags">
-                                <span class="tag failure-tag">Mobile Design</span>
-                                <span class="tag failure-tag">User Experience</span>
-                                <span class="tag failure-tag">Responsive Design</span>
-                                <span class="tag failure-tag">User Research</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="failure-api-integration" class="failure-item fade-in">
-                        <div class="failure-image">Integration Strategy</div>
-                        <div class="failure-content">
-                            <h3 class="failure-title">Third-Party API Integration Hub</h3>
-                            <p class="failure-description">
-                                Designed unified integration platform to connect multiple external services and streamline data flows. Project extended from 4-month timeline to 11 months with significant performance issues and integration failures requiring extensive manual intervention.
-                            </p>
-                            <div class="failure-outcome">
-                                <div class="outcome-label">What Went Wrong:</div>
-                                <p>Underestimated API inconsistencies and rate limiting across different providers. Built tight coupling between services without adequate error handling. Assumed external APIs would behave consistently.</p>
-                            </div>
-                            <div class="failure-learning">
-                                <div class="learning-label">Key Learning:</div>
-                                <p>Integration platforms must be designed for failure, not success. External dependencies are inherently unreliable. Now I prioritize circuit breakers, graceful degradation, and extensive monitoring before building integration features.</p>
-                            </div>
-                            <div class="tags">
-                                <span class="tag failure-tag">API Integration</span>
-                                <span class="tag failure-tag">System Architecture</span>
-                                <span class="tag failure-tag">Error Handling</span>
-                                <span class="tag failure-tag">Technical Planning</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="experience" class="section">
             <div class="container">
                 <h2 class="section-title">Leadership Journey</h2>
                 <div class="experience-timeline">
-                    <div id="experience-amazon" class="experience-item fade-in">
+                    <div class="experience-item fade-in">
                         <div class="experience-header">
                             <div>
                                 <h3 class="experience-title">Senior Product Manager</h3>
@@ -971,7 +768,7 @@
                         </ul>
                     </div>
 
-                    <div id="experience-organic-coup" class="experience-item fade-in">
+                    <div class="experience-item fade-in">
                         <div class="experience-header">
                             <div>
                                 <h3 class="experience-title">VP of Operations (Founding Team Member)</h3>
@@ -987,7 +784,7 @@
                         </ul>
                     </div>
 
-                    <div id="experience-ignite-farm" class="experience-item fade-in">
+                    <div class="experience-item fade-in">
                         <div class="experience-header">
                             <div>
                                 <h3 class="experience-title">Senior Brand Manager</h3>
@@ -1003,7 +800,7 @@
                         </ul>
                     </div>
 
-                    <div id="experience-research" class="experience-item fade-in">
+                    <div class="experience-item fade-in">
                         <div class="experience-header">
                             <div>
                                 <h3 class="experience-title">Research Contributor</h3>
@@ -1019,7 +816,7 @@
                         </ul>
                     </div>
 
-                    <div id="experience-education" class="experience-item fade-in">
+                    <div class="experience-item fade-in">
                         <div class="experience-header">
                             <div>
                                 <h3 class="experience-title">Education & Recognition</h3>
