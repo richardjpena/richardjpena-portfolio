@@ -897,6 +897,7 @@
                 <!-- Portfolio Filters -->
                 <div class="portfolio-filters">
                     <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="startup">Startup & SMB</button>
                     <button class="filter-btn" data-filter="platform">Platform Architecture</button>
                     <button class="filter-btn" data-filter="automation">Automation & AI</button>
                     <button class="filter-btn" data-filter="strategy">Strategic Vision</button>
@@ -905,6 +906,63 @@
 
                 <!-- Portfolio Grid -->
                 <div class="portfolio-grid">
+                    <!-- The Organic Coup -->
+                    <div class="portfolio-item fade-in" data-category="startup">
+                        <div class="portfolio-header">
+                            <span class="portfolio-category">Startup & SMB Experience</span>
+                            <h3 class="portfolio-title">Founding a Small Business: The Organic Coup</h3>
+                            <p class="portfolio-summary">Scaled a food startup from concept to 12 locations, driving 30% QoQ growth.</p>
+                        </div>
+                        <div class="portfolio-content">
+                            <p class="portfolio-description">
+                                As a founding team member and VP of Operations, I led product development and operational scaling. I launched the company's first mobile ordering platform and built a zero-to-one inventory management system to solve critical growth bottlenecks.
+                            </p>
+                            <div class="impact-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">30%</span>
+                                    <span class="metric-label">QoQ Revenue Growth</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">12</span>
+                                    <span class="metric-label">Locations Launched</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">3%</span>
+                                    <span class="metric-label">Conversion Uplift</span>
+                                </div>
+                            </div>
+
+                            <div class="portfolio-details">
+                                <div class="detail-section">
+                                    <h4>Product Initiatives</h4>
+                                    <ul>
+                                        <li>Launched the first mobile ordering platform, establishing key tech infrastructure.</li>
+                                        <li>Developed a custom, low-cost inventory management system from scratch.</li>
+                                        <li>Managed email marketing and optimized website SEO to drive customer acquisition.</li>
+                                    </ul>
+                                </div>
+                                <div class="detail-section">
+                                    <h4>Business Impact</h4>
+                                    <ul>
+                                        <li>Enabled rapid scaling from a single store to a multi-state operation.</li>
+                                        <li>Reduced operational waste by 2% through better inventory tracking.</li>
+                                        <li>Built and scaled high-performing teams, improving employee retention by 20%.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="tags">
+                                <span class="tag">Startup</span>
+                                <span class="tag">Zero-to-One</span>
+                                <span class="tag">Mobile Product</span>
+                                <span class="tag">Operations</span>
+                                <span class="tag">SMB Growth</span>
+                            </div>
+
+                            <button class="expand-btn">View Full Case Study</button>
+                        </div>
+                    </div>
+
                     <!-- Global Buying Platform Consolidation -->
                     <div class="portfolio-item fade-in" data-category="platform">
                         <div class="portfolio-header">
@@ -1518,25 +1576,36 @@
 
         // Animate metrics on scroll
         const animateValue = (element, start, end, duration) => {
+            const originalText = element.textContent;
+            let suffix = '';
+            // Get all non-numeric characters at the end as the suffix
+            const suffixMatch = originalText.match(/[^0-9.,$ ]+$/);
+            if (suffixMatch) {
+                suffix = suffixMatch[0];
+            }
+            
+            const prefix = originalText.startsWith('$') ? '$' : '';
             const startTime = performance.now();
+            
             const updateValue = (currentTime) => {
                 const elapsed = currentTime - startTime;
                 const progress = Math.min(elapsed / duration, 1);
-                
                 const current = start + (end - start) * progress;
-                
-                if (element.textContent.includes('$')) {
-                    element.textContent = '$' + Math.floor(current) + (end >= 1000000 ? 'M' : 'K');
-                } else if (element.textContent.includes('%')) {
-                    element.textContent = Math.floor(current) + '%';
-                } else if (element.textContent.includes('+')) {
-                    element.textContent = Math.floor(current) + '+';
+
+                let displayValue;
+                if (end.toString().includes('.')) {
+                    displayValue = current.toFixed(1); // For values like 3.7
                 } else {
-                    element.textContent = Math.floor(current);
+                    displayValue = Math.floor(current);
                 }
+                
+                element.textContent = prefix + displayValue + suffix;
                 
                 if (progress < 1) {
                     requestAnimationFrame(updateValue);
+                } else {
+                    // Snap to the original text to ensure final formatting is correct (e.g., commas)
+                    element.textContent = originalText;
                 }
             };
             requestAnimationFrame(updateValue);
@@ -1556,17 +1625,10 @@
                     // Animate metrics if they're visible
                     if (entry.target.classList.contains('metric-value')) {
                         const text = entry.target.textContent;
-                        let endValue = 0;
+                        // Parse the numeric value directly from the text content.
+                        const endValue = parseFloat(text.replace(/[^0-9.]/g, ''));
                         
-                        if (text.includes('$300M')) endValue = 600;
-                        else if (text.includes('$235M')) endValue = 235;
-                        else if (text.includes('$44M')) endValue = 44;
-                        else if (text.includes('$3.7M')) endValue = 3.7;
-                        else if (text.includes('94%')) endValue = 94;
-                        else if (text.includes('60+')) endValue = 60;
-                        else if (text.includes('10,000+')) endValue = 10000;
-                        
-                        if (endValue > 0 && !entry.target.animated) {
+                        if (!isNaN(endValue) && !entry.target.animated) {
                             entry.target.animated = true;
                             animateValue(entry.target, 0, endValue, 2000);
                         }
@@ -1627,3 +1689,4 @@
     </script>
 </body>
 </html>
+
