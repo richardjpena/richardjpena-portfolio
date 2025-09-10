@@ -213,7 +213,81 @@
             margin-top: -40px;
         }
 
-        /* About Section */
+        /* About Section - NEW Journey Styles */
+        .journey-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            margin-top: 40px;
+        }
+
+        .journey-step {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            width: 100%;
+            max-width: 800px;
+            position: relative;
+            padding: 20px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .journey-step:hover {
+            background-color: #f8faff;
+            transform: scale(1.03);
+        }
+
+        .journey-step:nth-child(even) {
+            flex-direction: row-reverse;
+            text-align: right;
+        }
+        
+        .journey-icon {
+            font-size: 4em;
+            min-width: 100px;
+            text-align: center;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: transform 0.3s ease;
+        }
+        
+        .journey-step:hover .journey-icon {
+            transform: rotate(-10deg) scale(1.1);
+        }
+
+        .journey-text h3 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .journey-text p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .journey-connector {
+            width: 4px;
+            height: 80px;
+            background: linear-gradient(180deg, #e0e7ff, #c7d2fe, #e0e7ff);
+            border-radius: 2px;
+        }
+        
+        /* Staggered Animations for Journey */
+        .journey-step:nth-child(1) { transition-delay: 0.2s; }
+        .journey-connector:nth-child(2) { transition-delay: 0.4s; }
+        .journey-step:nth-child(3) { transition-delay: 0.6s; }
+        .journey-connector:nth-child(4) { transition-delay: 0.8s; }
+        .journey-step:nth-child(5) { transition-delay: 1s; }
+
+
+        /* About Section (Original styles for reference, can be cleaned up) */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 2fr;
@@ -309,7 +383,7 @@
             border-color: transparent;
         }
 
-        /* Portfolio Stats */
+        /* Portfolio Stats - Updated for interactivity */
         .portfolio-stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -318,6 +392,7 @@
             padding: 40px;
             background: linear-gradient(135deg, #f5f7ff 0%, #e8ecff 100%);
             border-radius: 20px;
+            perspective: 1000px;
         }
 
         .stat-card {
@@ -326,12 +401,13 @@
             background: white;
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
         }
 
         .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+            transform: translateY(-10px) rotateX(10deg) scale(1.05);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.25);
         }
 
         .stat-number {
@@ -339,6 +415,13 @@
             font-weight: 700;
             color: #667eea;
             margin-bottom: 5px;
+            transition: color 0.3s ease;
+        }
+
+        .stat-card:hover .stat-number {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .stat-label {
@@ -566,80 +649,6 @@
             content: ' →';
         }
 
-        /* Timeline */
-        .timeline-container {
-            margin: 60px 0;
-            position: relative;
-        }
-
-        .timeline-line {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
-            transform: translateX(-50%);
-        }
-
-        .timeline-item {
-            display: flex;
-            margin-bottom: 60px;
-            position: relative;
-            opacity: 0;
-            animation: fadeInTimeline 0.6s ease forwards;
-        }
-
-        .timeline-item:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        @keyframes fadeInTimeline {
-            to {
-                opacity: 1;
-            }
-        }
-
-        .timeline-content {
-            width: 45%;
-            padding: 25px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .timeline-content:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 20px;
-            background: white;
-            border: 4px solid #667eea;
-            border-radius: 50%;
-            z-index: 1;
-        }
-
-        .timeline-date {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            top: -30px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: 600;
-            white-space: nowrap;
-        }
-
         /* Contact Section */
         .contact {
             background: #f8faff;
@@ -746,22 +755,22 @@
             }
 
             .timeline-item,
-            .timeline-item:nth-child(even) {
-                flex-direction: row;
+            @media (max-width: 768px) {
+            .nav-links {
+                display: none;
             }
 
-            .timeline-content {
-                width: calc(100% - 60px);
-                margin-left: 60px;
+            .hero h1 {
+                font-size: 2.5em;
             }
 
-            .timeline-dot {
-                left: 20px;
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
             }
 
-            .timeline-date {
-                left: 60px;
-                transform: none;
+            .portfolio-grid {
+                grid-template-columns: 1fr;
             }
 
             .section {
@@ -813,23 +822,36 @@
     <div class="main-content">
         <section id="about" class="section">
             <div class="container">
-                <h2 class="section-title">My Journey</h2>
-                <div class="about-content">
-                    <div class="about-image">🧬</div>
-                    <div class="about-text">
-                        <div class="brand-statement">"If I had an hour to solve a problem I'd spend 55 minutes defining the problem and five minutes solving it." - Albert Einstein</div>
-                        
-                        <p>I wasn't born knowing I'd be a product leader. With a B.S. in Aquatic Biology, I started by contributing to breakthrough research at UC Santa Barbara's Marine Biotech Center, working on abalone protein structures to find a cure for osteoporosis. While we didn't find the cure, we developed accelerated protein matrix modeling techniques that became foundational for future studies.</p>
-
-                        <p>That experience taught me something invaluable: how to fail gracefully, learn from complex challenges, and transform setbacks into breakthroughs. These principles became the foundation of my product philosophy—combining scientific rigor with strategic vision to solve problems others see as impossible.</p>
-
-                        <p>What I discovered is that product management is applied scientific method at business scale. My approach is rooted in frameworks I've developed that synthesize the best thinking from jobs-to-be-done methodology, continuous discovery principles, and innovation theory. Whether I'm architecting platform strategies or building organizational frameworks, I start by deeply understanding the problem before prescribing solutions.</p>
-
-                        <p>Einstein's wisdom guides everything I do: spend most of your time truly understanding what you're solving, and the solution becomes clear. This first-principles approach has enabled me to transform complex organizational challenges into systematic breakthroughs that drive sustainable competitive advantage.</p>
+                <h2 class="section-title">From Lab Coat to Launchpad</h2>
+                <p class="section-subtitle">A journey guided by first-principles thinking and a relentless drive to solve impossible problems.</p>
+                
+                <div class="journey-container">
+                    <div class="journey-step fade-in">
+                        <div class="journey-icon">🧬</div>
+                        <div class="journey-text">
+                            <h3>The Scientist</h3>
+                            <p>My story began in a biotech lab, transforming complex biological challenges into foundational research. This taught me the power of first-principles thinking and turning failure into discovery—the bedrock of my product philosophy.</p>
+                        </div>
+                    </div>
+                    <div class="journey-connector fade-in"></div>
+                    <div class="journey-step fade-in">
+                        <div class="journey-icon">🚀</div>
+                        <div class="journey-text">
+                            <h3>The Founder</h3>
+                            <p>As a founder, I translated that scientific rigor into the startup world, building a business from zero-to-one. I learned to be scrappy, customer-obsessed, and to build scalable systems that could support rapid growth under pressure.</p>
+                        </div>
+                    </div>
+                     <div class="journey-connector fade-in"></div>
+                    <div class="journey-step fade-in">
+                        <div class="journey-icon">🏗️</div>
+                        <div class="journey-text">
+                            <h3>The Product Architect</h3>
+                            <p>Today, I apply the scientific method at business scale. I architect platforms and strategies by deeply understanding the problem first, turning ambiguous visions into systematic breakthroughs that drive sustainable competitive advantage.</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="skills-grid">
+                <div class="skills-grid" style="margin-top: 80px;">
                     <div class="skill-card fade-in">
                         <div class="skill-icon">🧠</div>
                         <h3>Strategic Product Leadership</h3>
@@ -1410,63 +1432,6 @@
             </div>
         </section>
 
-        <!-- Timeline Section -->
-        <section id="timeline" class="section">
-            <div class="container">
-                <h2 class="section-title">My Product Journey</h2>
-                <p class="section-subtitle">From scientific research to product leadership excellence</p>
-
-                <div class="timeline-container">
-                    <div class="timeline-line"></div>
-                    
-                    <div class="timeline-item fade-in">
-                        <div class="timeline-date">2025</div>
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h3>Strategic Platform Architect</h3>
-                            <p>Leading enterprise platform transformation and cross-division convergence initiatives, delivering $300M+ in cumulative business value through platform innovation and strategic vision development.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item fade-in">
-                        <div class="timeline-date">2023-2024</div>
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h3>System Revolution Leader</h3>
-                            <p>Delivered platform consolidation achieving 94% latency improvement and $235M revenue impact. Led multiple automation initiatives saving 10,000+ manual hours annually.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item fade-in">
-                        <div class="timeline-date">2021-2022</div>
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h3>Senior Product Manager</h3>
-                            <p>Built and owned multi-year roadmap across $30M in engineering resources, launching 60+ products worldwide and driving $300M in topline revenue growth.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item fade-in">
-                        <div class="timeline-date">2016-2019</div>
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h3>VP Operations - The Organic Coup</h3>
-                            <p>Founding team member driving 30% QoQ revenue growth through mobile platform launch and custom inventory management system development.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item fade-in">
-                        <div class="timeline-date">2006-2015</div>
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h3>Scientific Foundation</h3>
-                            <p>B.S. in Aquatic Biology from UC Santa Barbara. Contributed to breakthrough research on protein structures, developing the first-principles thinking that now drives my product philosophy.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="contact" class="contact section">
             <div class="container">
                 <h2 class="section-title">Let's Build the Future Together</h2>
@@ -1633,7 +1598,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.fade-in, .metric-value, .timeline-item').forEach(el => {
+        document.querySelectorAll('.fade-in, .metric-value').forEach(el => {
             observer.observe(el);
         });
 
@@ -1691,4 +1656,3 @@
     </script>
 </body>
 </html>
-
