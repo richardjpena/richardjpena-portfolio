@@ -354,67 +354,6 @@
             font-weight: 500;
         }
 
-        /* Experience Section */
-        .experience-timeline {
-            position: relative;
-            padding-left: 40px;
-        }
-
-        .experience-timeline::before {
-            content: '';
-            position: absolute;
-            left: 15px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: #667eea;
-        }
-
-        .experience-item {
-            position: relative;
-            margin-bottom: 50px;
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        .experience-item::before {
-            content: '';
-            position: absolute;
-            left: -47px;
-            top: 30px;
-            width: 16px;
-            height: 16px;
-            background: #667eea;
-            border-radius: 50%;
-            border: 4px solid white;
-            box-shadow: 0 0 0 2px #667eea;
-        }
-
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-
-        .experience-title {
-            font-size: 1.3em;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .experience-company {
-            color: #667eea;
-            font-weight: 500;
-        }
-
-        .experience-date {
-            color: #888;
-            font-size: 0.9em;
-        }
-
         /* Contact Section */
         .contact {
             background: #f8faff;
@@ -542,8 +481,6 @@
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#failures">Learning</a></li>
-                <li><a href="#experience">Experience</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -746,95 +683,6 @@
             </div>
         </section>
 
-        <section id="experience" class="section">
-            <div class="container">
-                <h2 class="section-title">Leadership Journey</h2>
-                <div class="experience-timeline">
-                    <div class="experience-item fade-in">
-                        <div class="experience-header">
-                            <div>
-                                <h3 class="experience-title">Senior Product Manager</h3>
-                                <p class="experience-company">Amazon</p>
-                            </div>
-                            <span class="experience-date">May 2021 - Present</span>
-                        </div>
-                        <ul>
-                            <li>Owned product strategy for core platform services, including ML-powered forecasting engine that drove 5% YoY revenue increase by improving accuracy of financial and inventory data models</li>
-                            <li>Drove technical strategy for platform scalability and reliability, leading deep-dive technical evaluations that resulted in $10M cost reduction while ensuring long-term architectural integrity</li>
-                            <li>Analyzed complex, system-level workflows across internal operational teams, identifying and resolving core data inaccuracies that boosted downstream user satisfaction by 45%</li>
-                            <li>Managed roadmap for platform improvements enabling other product teams to ship features more efficiently, contributing to 58% QoQ increase in end-user adoption</li>
-                            <li>Collaborated with finance, operations, and engineering stakeholders to define technical requirements for platforms modeling key revenue and cost drivers within worldwide grocery business</li>
-                            <li>Secured $4M in engineering resources for strategic platform initiatives by developing compelling product vision and multi-year roadmap focused on system-level improvements</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item fade-in">
-                        <div class="experience-header">
-                            <div>
-                                <h3 class="experience-title">VP of Operations (Founding Team Member)</h3>
-                                <p class="experience-company">The Organic Coup</p>
-                            </div>
-                            <span class="experience-date">June 2016 - April 2019</span>
-                        </div>
-                        <ul>
-                            <li>Built and developed high-performing management team from ground up, implementing coaching and performance tracking that improved leadership success rates from 50% to 90%</li>
-                            <li>As founding team member, spearheaded 0-to-1 development of custom inventory management platform, enabling data-driven demand forecasting and logistical operations that decreased company waste by 2%</li>
-                            <li>Built and launched company's initial e-commerce website and online ordering platform, establishing first digital transaction systems from the ground up</li>
-                            <li>Applied first-principles thinking to scale operations from startup phase through rapid growth, creating systematic processes that supported business expansion</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item fade-in">
-                        <div class="experience-header">
-                            <div>
-                                <h3 class="experience-title">Senior Brand Manager</h3>
-                                <p class="experience-company">Ignite Farm</p>
-                            </div>
-                            <span class="experience-date">October 2015 - June 2016</span>
-                        </div>
-                        <ul>
-                            <li>Drove 0-to-1 brand and product launch by defining GTM strategy and product roadmap, scaling revenue from $0 to $400K in six months</li>
-                            <li>Established foundational product management practices including customer discovery, market analysis, and strategic positioning</li>
-                            <li>Demonstrated early mastery of systematic problem-solving and strategic thinking that became hallmarks of later product leadership success</li>
-                            <li>Applied data-driven decision making to optimize product-market fit and accelerate growth trajectory</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item fade-in">
-                        <div class="experience-header">
-                            <div>
-                                <h3 class="experience-title">Research Contributor</h3>
-                                <p class="experience-company">UC Santa Barbara Marine Biotech Center</p>
-                            </div>
-                            <span class="experience-date">2006</span>
-                        </div>
-                        <ul>
-                            <li>Contributed to breakthrough research breaking down abalone protein structures to find cure for osteoporosis at UC Santa Barbara's Marine Biotech Center</li>
-                            <li>Developed accelerated protein matrix modeling techniques that became foundational for future studies, demonstrating early systems thinking</li>
-                            <li>Learned to fail gracefully on complex scientific challenges while extracting valuable learnings for future research directions</li>
-                            <li>Established first-principles thinking methodology and scientific rigor that later translated to elite product leadership success</li>
-                        </ul>
-                    </div>
-
-                    <div class="experience-item fade-in">
-                        <div class="experience-header">
-                            <div>
-                                <h3 class="experience-title">Education & Recognition</h3>
-                                <p class="experience-company">University of California, Santa Barbara</p>
-                            </div>
-                            <span class="experience-date">2006</span>
-                        </div>
-                        <ul>
-                            <li><strong>B.S. Aquatic Biology</strong> - Developed analytical thinking and scientific methodology that forms foundation of product leadership approach</li>
-                            <li><strong>GenAI Hackathon (Top 3 Finalist)</strong> - Co-developed productionized AI tool improving customer productivity by 50%, championing responsible AI application</li>
-                            <li><strong>Leadership Development Program</strong> - Selected as one of 150 participants nationwide for 18-month professional development program for high-achieving underrepresented talent in tech</li>
-                            <li>Core competencies: Platform Product Strategy, System-Level Analysis, Data Modeling, Technical Product Management, Cross-Functional Collaboration, AI/ML Product Concepts</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="contact" class="contact section">
             <div class="container">
                 <h2 class="section-title">Let's Build the Future Together</h2>
@@ -1018,31 +866,6 @@
                 }, 200);
             });
         });
-
-        // Enhance experience timeline with progressive reveal
-        const experienceItems = document.querySelectorAll('.experience-item');
-        
-        function revealExperience() {
-            experienceItems.forEach((item, index) => {
-                const rect = item.getBoundingClientRect();
-                if (rect.top < window.innerHeight - 100) {
-                    setTimeout(() => {
-                        item.style.opacity = '1';
-                        item.style.transform = 'translateX(0)';
-                    }, index * 200);
-                }
-            });
-        }
-        
-        // Initialize experience items as hidden
-        experienceItems.forEach(item => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateX(-30px)';
-            item.style.transition = 'all 0.6s ease';
-        });
-        
-        window.addEventListener('scroll', revealExperience);
-        revealExperience(); // Initial check
     </script>
 </body>
 </html>
